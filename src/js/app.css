@@ -1,0 +1,40 @@
+html, body {margin: 0; height: 100%; overflow: hidden}
+div.container{
+  max-width: 1500px;
+  margin: auto;
+  margin-top: 50px;
+}
+*{
+  color: white;
+  background-color: black;
+  margin-top: 10px;
+  margin: 10px;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 0.8fr 0.3fr 2.3fr 0.3fr 1.3fr 1fr;
+  grid-template-rows: 0.3fr 2.4fr 0.3fr;
+  gap: 0px 0px;
+}
+
+.display { grid-area: 2 / 5 / 3 / 6; }
+
+.align { 
+  grid-area: 2 / 4 / 3 / 5; 
+}
+
+.revert { grid-area: 2 / 2 / 3 / 3; }
+
+.main { grid-area: 2 / 3 / 3 / 4; }
+
+.swap { grid-area: 2 / 2 / 3 / 3; }
+
+div.align-top{
+  height: 211px;
+}
+div.swap-top{
+  height: 280px;
+}
+
+

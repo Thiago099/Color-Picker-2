@@ -1,0 +1,20 @@
+div.color{
+    width: 200px;
+    height: 200px;
+    border: solid white 3px;
+    margin: auto;
+    margin-top: 15px;
+    border-radius: 4px;
+    margin: auto;
+}
+div.displayContainer{
+    margin-top: 20px;
+}
+input.display{
+    padding: 5px;
+    width: 100%;
+    font-size: 1.1em;
+    background-color: #222222;
+    border: solid white 1px;
+    border-radius: 4px;
+}

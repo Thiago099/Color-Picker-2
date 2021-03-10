@@ -2,5 +2,5 @@
 
 ## instalation
 run in the console
-npm install
-npm run build-win
+  npm install
+  npm run build-win

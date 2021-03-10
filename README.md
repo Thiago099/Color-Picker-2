@@ -1,6 +1,6 @@
 # Color Picker 2
 
-##instalation
+## instalation
 run in the console
 npm install
 npm run build-win

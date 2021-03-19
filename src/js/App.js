@@ -1,6 +1,6 @@
 
 
-import React,{useState} from 'react';
+import React,{useState,useEffect} from 'react';
 import './App.css';
 
 import ColorTrackbar from './components/ColorTrackbar';
@@ -8,6 +8,10 @@ import LightTrackbar from './components/LightTrackbar';
 import ColorDisplay from './components/ColorDisplay';
 import Button from './components/Button';
 
+function componentToHex(c) {
+  var hex = parseInt(c).toString(16);
+  return hex.length == 1 ? "0" + hex : hex;
+}
 
 export default ()=>
 {
@@ -45,12 +49,14 @@ export default ()=>
     g:0,
     b:0,
   }); 
-
+  const [hex,setHex] = useState("#000000");
+  
+  
   function update_control(source,r,g,b)
   {
-    var r = parseInt(r);
-    var g = parseInt(g);
-    var b = parseInt(b);
+    var r = r==""?0:parseInt(r);
+    var g = g==""?0:parseInt(g);
+    var b = b==""?0:parseInt(b);
     setColor({r:r,g:g,b:b})
     if(source!=="light")
     {
@@ -92,10 +98,13 @@ export default ()=>
         }
       )
     }
+    if(source!=="hex")
+    {
+      setHex("#"+componentToHex(r) + componentToHex(g) + componentToHex(b));
+    }
   }
   return (
     <>
-
     <div className="container grid-container" >
       
       <div className="main">
@@ -108,7 +117,7 @@ export default ()=>
         <LightTrackbar chanel="light_gb" center={center_gb} value={light_gb} setValue={setLightGB} color={color} update={update_control}/>        
       </div>
       <div className="display">
-        <ColorDisplay color={color}/>
+        <ColorDisplay color={color} setColor={setColor} update={update_control} hex={hex} setHex={setHex}/>
       </div>
       <div className="align">
         <div className="align-top"></div>

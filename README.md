@@ -3,8 +3,7 @@
 ## instalation
 install Node
 
-run in the console on this project folder
-
+run those commands in the project folder
 
     npm install
     
